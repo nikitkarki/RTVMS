@@ -10,10 +10,11 @@
 <title>LookUp Ticket</title>
 </head>
 <body>
+<div class="container" style="width: 25%; margin: 0px auto;">
 <form>
   <div class="form-group">
     <label for="TicketNumber">Ticket Number</label>
-    <input type="number" class="form-control" id="ticketNumber" placeholder="Enter Ticket Number">
+    <input type="text" class="form-control" id="ticketNumber" placeholder="Enter Ticket Number">
   </div>
   <div class="form-group">
     <label for="DOB">Date Of Birth</label>
@@ -21,10 +22,11 @@
   </div>
   <div class="form-group">
   	<label for="LicenseNumber">License Number</label>
-    <input type="number" class="form-control" id="licenseNumber" placeholder="Enter License number">
+    <input type="text" class="form-control" id="licenseNumber" placeholder="Enter License number">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
-  <a href="index.jsp">Cancel</a>
+  <a href="/rtvms/home">Cancel</a>
 </form>
+</div>
 </body>
 </html>

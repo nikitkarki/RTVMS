@@ -30,6 +30,7 @@
 </style>
 </head>
 <body>
+<div class="container">
 <div class="login-form">
     <form action="/" method="post">
         <h2 class="text-center">Log in</h2>       
@@ -43,6 +44,7 @@
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>        
     </form>
+</div>
 </div>
 </body>
 </html>
