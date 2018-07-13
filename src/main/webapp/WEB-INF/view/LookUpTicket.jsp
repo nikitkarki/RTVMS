@@ -16,14 +16,6 @@
     <label for="TicketNumber">Ticket Number</label>
     <input type="text" class="form-control" id="ticketNumber" placeholder="Enter Ticket Number">
   </div>
-  <div class="form-group">
-    <label for="DOB">Date Of Birth</label>
-    <input type="date" class="form-control" id="DOB" placeholder="Enter date of birth">
-  </div>  <div class="form-group">
-  	<label for="LicenseNumber">License Number</label>
-    <input type="text" class="form-control" id="licenseNumber" placeholder="Enter License number">
-  </div>
-
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href="/rtvms/home">Cancel</a>
 </form>
