@@ -1,0 +1,17 @@
+CREATE TABLE user_address (
+address_id INT(5) AUTO_INCREMENT PRIMARY KEY,
+country VARCHAR(10) NOT NULL,
+district VARCHAR(20) NOT NULL,
+wardNumber INT(2) NOT NULL,
+city VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE user_table (
+user_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstName VARCHAR(30) NOT NULL,
+lastName VARCHAR(30) NOT NULL,
+dateOfBirth VARCHAR(15) NOT NULL,
+phoneNo VARCHAR(30) NOT NULL,
+address INT(5) NOT NULL,
+FOREIGN KEY (address) REFERENCES user_address(address_id)
+);
