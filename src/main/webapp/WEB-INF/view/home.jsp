@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -30,22 +31,28 @@ background-color:#64cbff;
 		<div class="container-fluid">
 			<div class="col-xs-12">
 				<ul class="nav navbar-nav col-xs-12 col-lg-12 col-md-12">
-					<li><a href="#">Home</a></li>
+					<li><a href="${pageContext.request.contextPath}/home"><i class="fas fa-home"></i>&nbspHome</a></li>
 					<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage Tickets <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ticket-alt"></i>&nbspManage Tickets <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="tickets/lookupticket">Lookup Ticket</a></li>
-                <li><a href="tickets/payticket">Pay Ticket</a></li>
+                <li><a href="${pageContext.request.contextPath}/tickets/lookupticket"><i class="fas fa-search"></i>&nbspLookup Ticket</a></li>
+                <li><a href="${pageContext.request.contextPath}/tickets/payticket"><i class="fas fa-money-bill"></i>&nbspPay Ticket</a></li>
                 </ul></li>
-					<li><a href="contact">Contact Us</a></li>
-					<li><a href="about">About Us</a></li>
+					<li><a href="${pageContext.request.contextPath}/contact"><i class="fas fa-phone"></i>&nbspContact Us</a></li>
+					<li><a href="${pageContext.request.contextPath}/about"><i class="fas fa-file-alt"></i>&nbspAbout Us</a></li>
 				</ul>
 			</div>
+			<div>
+				<h1>Welcome to RTVMS web page</h1>
+				<p>Here you can view your ticket and pay ticket online.</p>
+			</div>
+			<div class="col-xs-12">
+				<jsp:include page="${content}"/>
+			</div>
+			
 		</div>
-		<div class="container-fluid">
-			<h1>Welcome to RTVMS web page</h1>
-		<p>Here you can view your ticket and pay ticket online.</p>
-		</div>
+		
+		
 	</div>
 	</nav>
 </body>

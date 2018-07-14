@@ -10,7 +10,7 @@
 <title>LookUp Ticket</title>
 </head>
 <body>
-<div class="container" style="width: 25%; margin: 0px auto;">
+<div class="container col-xs-6 col-md-6 col-sm-6">
 <form>
   <div class="form-group">
     <label for="TicketNumber">Ticket Number</label>

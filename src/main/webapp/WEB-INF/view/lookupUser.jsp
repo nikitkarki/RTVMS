@@ -8,14 +8,21 @@
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>LookUp User page</title>
+<style>
+	body{
+	background-color:#AAB7B8;
+}
+</style>
 </head>
 <body>
 	<div class="container" style="width: 25%; margin: 0px auto;">
+	<br>
  <form>
  	<div class="form-group row">
- 	<label>Search user</label>
- <input type="text" class="form-control" placeholder="Enter user name"><br>
+ 	<label>Search User by Fullname</label>
+ <input type="text" class="form-control" placeholder="Example John,Doe"><br>
  	<button type="submit" class="btn btn-primary">Submit</button>
+ 	<a href="${pageContext.request.contextPath}/admin/home">Cancel</a>
  </form>
 </div>
 </body>

@@ -32,7 +32,7 @@
 <body>
 <div class="container">
 <div class="login-form">
-    <form action="/" method="post">
+    <form action="${pageContext.request.contextPath}/admin/home" method="get">
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" required="required">
