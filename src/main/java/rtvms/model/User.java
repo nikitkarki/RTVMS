@@ -7,6 +7,10 @@ public class User {
 	private String dateOfBirth;
 	private String phoneNo;
 	private Address address;
+	
+	public User() {
+		super();
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -42,6 +46,11 @@ public class User {
 	}
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", dateOfBirth="
+				+ dateOfBirth + ", phoneNo=" + phoneNo + ", address=" + address + "]";
 	}
 	
 }

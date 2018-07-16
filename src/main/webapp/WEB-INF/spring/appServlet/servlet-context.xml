@@ -26,4 +26,6 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	<context:component-scan base-package="rtvms.controller" />
+	<context:component-scan base-package="rtvms.dao" />
+	<context:component-scan base-package="rtvms.service" />
 </beans:beans>

@@ -1,0 +1,47 @@
+package rtvms.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import rtvms.model.Address;
+import rtvms.model.User;
+
+@Repository
+public class UserDaoImpl implements UserDao{
+
+	private JdbcTemplate jdbcTemplate;
+	@Autowired
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+
+	public List<User> getUsers(String searchString) {
+		List<User> userList = new ArrayList<User>();
+		String[] fullName = searchString.split("\\s+");
+		String sql= "select * from user_table where firstName like ? and lastName like ?";
+		try {
+			userList = jdbcTemplate.query(sql, new Object[] {fullName[0], fullName[1]}, new RowMapper<User>() {
+				public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+					User tempUser = new User();
+					tempUser.setUserId(rs.getInt(1));
+					tempUser.setFirstName(rs.getString(2));
+					tempUser.setLastName(rs.getString(3));
+					tempUser.setDateOfBirth(rs.getString(4));
+					tempUser.setPhoneNo(rs.getString(5));
+					tempUser.setAddress(new Address());
+					return tempUser;
+				}
+			});
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return userList;
+	}
+
+}

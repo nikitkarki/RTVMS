@@ -36,7 +36,7 @@ background-color:#ffffff;
 					 <li class="dropdown">
 					 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-users"></i>&nbspUser Management <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#"><i class="fas fa-user-plus"></i>&nbspRegister</a></li>
+                <li><a href="${pageContext.request.contextPath}/admin/registeruser"><i class="fas fa-user-plus"></i>&nbspRegister</a></li>
                 <li><a href="${pageContext.request.contextPath}/admin/lookupuser"><i class="fas fa-search"></i>&nbspLookup</a></li>
                 </ul></li>
 					<li><a href="#"><i class="fas fa-ticket-alt"></i>&nbspManage Tickets</a></li>
