@@ -19,6 +19,34 @@
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href="/rtvms/home">Cancel</a>
 </form>
+<div class="col-xs-12">
+	 	<table class="table table-striped table-hover table-bordered datatable">
+			<thead>
+				<tr>
+					<th scope="col">Ticket ID</th>
+					<th scope="col">Ticket Number</th>
+					<th scope="col">FirstName</th>
+					<th scope="col">LastName</th>
+					<th scope="col">Date Of Birth</th>
+					<th scope="col">Issue Date</th>
+					<th scope="col">License Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="user" items="${searchedTicket}">
+					<tr>
+						<td>${user.ticketId}</td>
+						<td>${user.ticketNumber}</td>
+						<td>${user.firstName}</td>
+						<td>${user.lastName}</td>
+						<td>${user.dateOfBirth}</td>
+						<td>${user.issueDate}</td>
+						<td>${user.licenseNumber}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </div>
 </body>
 </html>

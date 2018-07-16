@@ -29,4 +29,6 @@
 </bean>	
 <bean id="userDao" class="rtvms.dao.UserDaoImpl">
 </bean>	
+<bean id="ticketDao" class="rtvms.dao.TicketDaoImpl">
+</bean>
 </beans>
