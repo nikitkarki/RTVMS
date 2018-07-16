@@ -69,11 +69,7 @@
          <div class="form-group col-xs-12">
             Country:<input type="text" class="form-control" placeholder="Enter Country">
         </div>  
-        <div class="form-group col-xs-6 col-md-6 col-sm-6">
-            Zone:<input type="text" class="form-control" placeholder="Enter Zone">
-        </div>
-        
-        <div class="form-group col-xs-6 col-md-6 col-sm-6">
+        <div class="form-group col-xs-12">
             District:<input type="text" class="form-control" placeholder="Enter District">
         </div>
         <div class="form-group col-xs-6 col-md-6 col-sm-6">
@@ -83,7 +79,7 @@
             Ward:<input type="text" class="form-control" placeholder="Enter Ward">
         </div>
         <div class="form-group col-xs-12">
-            Phone Number:<input type="Number" class="form-control" placeholder="Enter Phone Number">
+            Phone Number:<input type="text" class="form-control" placeholder="Enter Phone Number">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Register</button>

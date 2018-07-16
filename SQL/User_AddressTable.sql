@@ -13,5 +13,7 @@ lastName VARCHAR(30) NOT NULL,
 dateOfBirth VARCHAR(15) NOT NULL,
 phoneNo VARCHAR(30) NOT NULL,
 address INT(5) NOT NULL,
+email VARCHAR(50) NOT NULL,
+password VARCHAR(30) NOT NULL,
 FOREIGN KEY (address) REFERENCES user_address(address_id)
 );
