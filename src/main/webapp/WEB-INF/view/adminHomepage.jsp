@@ -50,7 +50,7 @@ background-color:#ffffff;
 
 			</div>
 				<div class="col-xs-12 text-center">
-				<h3>2018 RTVMS, All rights reserved</h3>
+				<h3>© 2018 RTVMS, All rights reserved</h3>
 				</div>
 	</div>
 </div>
