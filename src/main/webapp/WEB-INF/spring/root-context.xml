@@ -31,4 +31,6 @@
 </bean>	
 <bean id="ticketDao" class="rtvms.dao.TicketDaoImpl">
 </bean>
+<bean id="ticketService" class="rtvms.service.TicketServiceImpl">
+</bean>
 </beans>

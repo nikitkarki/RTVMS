@@ -20,7 +20,7 @@ public class TicketDaoImpl implements TicketDao{
 	}
 	public Ticket getTicket(String ticketNumber) {
 		Ticket ticket = new Ticket();
-		String sql= "select * from user_table where ticketNumber = ?";
+		String sql= "select * from user_ticket where ticketNumber = ?";
 		try {
 			ticket = jdbcTemplate.queryForObject(sql, new Object[] {ticketNumber}, new RowMapper<Ticket>() {
 				public Ticket mapRow(ResultSet rs, int rowNum) throws SQLException {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,10 +12,10 @@
 </head>
 <body>
 <div class="container col-xs-6 col-md-6 col-sm-6">
-<form>
+<form action="${pageContext.request.contextPath}/tickets/lookupticket" method="POST">
   <div class="form-group">
     <label for="TicketNumber">Ticket Number</label>
-    <input type="text" class="form-control" id="ticketNumber" placeholder="Enter Ticket Number">
+    <input type="text" class="form-control" name="ticketNumber" placeholder="Enter Ticket Number">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href="/rtvms/home">Cancel</a>
@@ -33,19 +34,20 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="user" items="${searchedTicket}">
+			<c:if test="${searchedTicket.ticketId != 0}">
 					<tr>
-						<td>${user.ticketId}</td>
-						<td>${user.ticketNumber}</td>
-						<td>${user.firstName}</td>
-						<td>${user.lastName}</td>
-						<td>${user.dateOfBirth}</td>
-						<td>${user.issueDate}</td>
-						<td>${user.licenseNumber}</td>
+						<td>${searchedTicket.ticketId}</td>
+						<td>${searchedTicket.ticketNumber}</td>
+						<td>${searchedTicket.firstName}</td>
+						<td>${searchedTicket.lastName}</td>
+						<td>${searchedTicket.dateOfBirth}</td>
+						<td>${searchedTicket.issueDate}</td>
+						<td>${searchedTicket.licenseNumber}</td>
 					</tr>
-				</c:forEach>
+			</c:if> 
 			</tbody>
 		</table>
+		<div class="text-danger">${ticketMessage}</div>
 	</div>
 </div>
 </body>
