@@ -1,5 +1,6 @@
 CREATE TABLE user_violations (
 violation_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+violationType VARCHAR(45) NOT NULL,
 violationCharge INT(11) NOT NULL,
 violationDescription VARCHAR(150) NOT NULL
 );

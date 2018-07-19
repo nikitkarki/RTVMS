@@ -40,8 +40,12 @@ background-color:#ffffff;
                 </ul></li>
 				</ul>
 	</div>
+	<div class="col-xs-12 content-div">
+			<jsp:include page="${content}"/>
+		</div>
 	<div class="col-xs-12 text-center">
 				<h3>© 2018 RTVMS, All rights reserved</h3>
+				</div>
 				</div>
 </body>
 </html>
