@@ -1,9 +1,12 @@
 CREATE TABLE user_violations (
 violation_id INT(11) AUTO_INCREMENT PRIMARY KEY,
-violationType VARCHAR(45) NOT NULL,
 violationCharge INT(11) NOT NULL,
 violationDescription VARCHAR(150) NOT NULL
 );
+
+ALTER table rtvms.user_violations
+ADD COLUMN violation_type VARCHAR(45) AFTER violation_id;
+
 
 CREATE TABLE user_ticket (
 ticket_id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
