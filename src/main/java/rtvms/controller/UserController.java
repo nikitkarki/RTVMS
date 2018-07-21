@@ -10,11 +10,11 @@ public class UserController {
 
 	@RequestMapping(value="/user", method = RequestMethod.GET)
 	public String showLogin() {
-		return "trafficLogin";
+		return "trafficlogin";
 	}
 	@RequestMapping(value="/user/home", method = RequestMethod.GET)
 	public String showHome() {
-		return "userHome";
+		return "userhome";
 	}
 	
 	

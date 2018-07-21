@@ -24,13 +24,13 @@ public class TicketController {
 
 	@RequestMapping(value="/lookupticket", method = RequestMethod.GET)
 	public String lookupTicket(Model model) {
-		model.addAttribute("content","LookUpTicket.jsp");
+		model.addAttribute("content","lookupticket.jsp");
 		return "home";
 	}
 	
 	@RequestMapping(value="/payticket", method = RequestMethod.GET)
 	public String payTicket(Model model) {
-		model.addAttribute("content","payTicket.jsp");
+		model.addAttribute("content","payticket.jsp");
 		return "home";
 	}
 	@RequestMapping(value="/lookupticket", method = RequestMethod.POST)
@@ -38,7 +38,7 @@ public class TicketController {
 		String ticketNumber = request.getParameter("ticketNumber");
 		Ticket ticket = ticketService.getTicket(ticketNumber);
 		model.addAttribute("searchedTicket",ticket);
-		model.addAttribute("content", "LookUpTicket.jsp");
+		model.addAttribute("content", "lookupticket.jsp");
 		if(ticket.getTicketId() == 0) {
 			model.addAttribute("ticketMessage", "Ticket Not Found");
 		}
@@ -50,7 +50,7 @@ public class TicketController {
 		String ticketNumber = request.getParameter("ticketNumber");
 		Ticket ticket = ticketService.getTicket(ticketNumber);
 		model.addAttribute("searchedTicket",ticket);
-		model.addAttribute("content", "payTicket.jsp");
+		model.addAttribute("content", "payticket.jsp");
 		if(ticket.getTicketId() == 0) {
 			model.addAttribute("ticketMessage", "Ticket Not Found");
 		}

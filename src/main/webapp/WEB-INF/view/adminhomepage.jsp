@@ -53,6 +53,5 @@ background-color:#ffffff;
 				<h3>© 2018 RTVMS, All rights reserved</h3>
 				</div>
 	</div>
-</div>
 </body>
 </html>
