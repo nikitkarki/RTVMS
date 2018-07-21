@@ -19,3 +19,10 @@ licenseNumber VARCHAR(30) NOT NULL,
 violation INT(5) NOT NULL,
 FOREIGN KEY (violation) REFERENCES user_violations(violation_id)
 );
+
+ALTER TABLE rtvms.user_ticket
+ADD COLUMN driver_violation_id INT(11) NOT NULL,
+ADD COLUMN ticket_paid VARCHAR(15) NOT NULL;
+
+ALTER TABLE rtvms.user_ticket
+ADD FOREIGN KEY (driver_violation_id) REFERENCES driver_violations(violation_id);
