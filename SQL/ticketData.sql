@@ -1,0 +1,4 @@
+INSERT INTO rtvms.user_ticket (ticketNumber, firstName, lastName, dateOfBirth, issueDate, licenseNumber, violation) VALUES (1,'nikit', 'karki','01/05/1997', '17/07/2018', 11122221,1);
+INSERT INTO rtvms.user_ticket (ticketNumber, firstName, lastName, dateOfBirth, issueDate, licenseNumber, violation) VALUES (2,'aditya', 'bhattarai','04/06/1995', '18/07/2018', 22131313,2);
+INSERT INTO rtvms.user_ticket (ticketNumber, firstName, lastName, dateOfBirth, issueDate, licenseNumber, violation) VALUES (3,'prashant', 'rokaha','02/07/1995', '16/12/2018', 1231231,3);
+INSERT INTO rtvms.user_ticket (ticketNumber, firstName, lastName, dateOfBirth, issueDate, licenseNumber, violation) VALUES (4,'ram', 'shah','05/09/1996', '17/05/2018', 1232231,4);
