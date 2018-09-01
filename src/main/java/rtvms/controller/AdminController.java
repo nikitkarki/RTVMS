@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import rtvms.model.User;
+import rtvms.model.UserCredential;
 import rtvms.service.UserService;
 
 @Controller
@@ -24,8 +25,21 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/admin", method = RequestMethod.GET)
-	public String showLogin() {
+	public String showLogin(Model model) {
+		UserCredential userCredential = new UserCredential();
+//		model.addAttribute("loginMessage","");
+		model.addAttribute("userCredential",userCredential);
 		return "loginpage";
+	}
+	@RequestMapping(value="/admin", method = RequestMethod.POST)
+	public String userLogin(@ModelAttribute("userCredential") UserCredential userCredential, Model model) {
+		int userLogin = userService.loginUser(userCredential);
+		if(userLogin>0) {
+			return "adminhomepage";
+		} else {
+			model.addAttribute("loginMessage","Invalid Username or Password");
+			return "loginpage";
+		}
 	}
 	@RequestMapping(value="/admin/home", method = RequestMethod.GET)
 	public String showHome() {
