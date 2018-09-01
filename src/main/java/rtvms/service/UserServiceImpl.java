@@ -20,5 +20,9 @@ public class UserServiceImpl implements UserService{
 	public List<User> getUser(String searchString) {
 		return userDao.getUsers(searchString);
 	}
+
+	public Boolean registerUser(User user) {
+		return userDao.registerUser(user);
+	}
 	
 }

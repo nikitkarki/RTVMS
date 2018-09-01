@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,49 +43,52 @@
         <body>
         <div class="container">
         <div class="registration-form">
-        <form action="/" method="post">
+        <form:form action="${pageContext.request.contextPath}/admin/registeruser" method="post" modelAttribute="registrationForm">
         <h2 class="text-center">Registration form</h2>    
         <div class="form-group col-xs-6 col-md-6 col-sm-6">
-            First Name:<input type="text" class="form-control" placeholder="Enter First Name" required="required">
+            <label class="control-label" for="">First Name:</label>
+            <form:input path="firstName" class="form-control" type="text" placeholder="Enter First Name" required="required" />
         </div>   
         <div class="form-group col-xs-6 col-md-6 col-sm-6">
-            Last Name:<input type="text" class="form-control" placeholder="Enter Last Name" required="required">
+            <label class="control-label" for="">Last Name:</label>
+         	<form:input path="lastName" class="form-control" type="text" placeholder="Enter Last Name" required="required" />
         </div>
         <div class="form-group col-xs-12">
-            Date of Birth:<input type="text" class="form-control" placeholder="Enter Date of Birth" required="required">
-        </div>
-         <div class="form-group col-xs-12">
-            Gender: <input type="radio" name="gender" value="male">Male
-                    <input type="radio" name="gender" value="female">Female
-        </div>
-        <div class="form-group col-xs-12">
-            Email:<input type="text" class="form-control" placeholder="Enter email" required="required">
-        </div>
-        <div class="form-group col-xs-12">
-            Password:<input type="password" class="form-control" placeholder="Enter Password"  required="required">
-        </div>
-        <div class="form-group col-xs-12">
-            Repeat password:<input type="password" class="form-control" placeholder="Repeat Password"  required="required">
-        </div>
-         <div class="form-group col-xs-12">
-            Country:<input type="text" class="form-control" placeholder="Enter Country">
+        <label class="control-label" for="">Date of Birth:</label>
+        <form:input path="dateOfBirth" class="form-control" type="text" placeholder="Enter Date of Birth" required="required" />
         </div>  
         <div class="form-group col-xs-12">
-            District:<input type="text" class="form-control" placeholder="Enter District">
-        </div>
-        <div class="form-group col-xs-6 col-md-6 col-sm-6">
-            City:<input type="text" class="form-control" placeholder="Enter City">
-        </div>
-        <div class="form-group col-xs-6 col-md-6 col-sm-6">
-            Ward:<input type="text" class="form-control" placeholder="Enter Ward">
+            <label class="control-label" for="">Email:</label>
+            <form:input path="email"  class="form-control" type="text" placeholder="Enter email" required="required"/>
         </div>
         <div class="form-group col-xs-12">
-            Phone Number:<input type="text" class="form-control" placeholder="Enter Phone Number">
+        <label class="control-label" for="">Password:</label>
+        <form:input path="password" class="form-control" type="password" placeholder="Enter Password"  required="required"/>
+        </div>
+         <div class="form-group col-xs-12">
+         <label class="control-label" for="">Country:</label>
+         <form:input path="address.country" class="form-control" type="text" placeholder="Enter Country"/>
+        </div>  
+        <div class="form-group col-xs-12">
+        <label class="control-label" for="">District:</label>
+        <form:input path="address.district" class="form-control" type="text" placeholder="Enter District"/>
+        </div>
+        <div class="form-group col-xs-6 col-md-6 col-sm-6">
+        <label class="control-label" for="">City:</label>
+        <form:input path="address.city" class="form-control" type="text" placeholder="Enter City"/>
+        </div>
+        <div class="form-group col-xs-6 col-md-6 col-sm-6">
+        <label class="control-label" for="">Ward:</label>
+        <form:input path="address.wardNumber" class="form-control" type="text" placeholder="Enter Ward"/>
+        </div>
+        <div class="form-group col-xs-12">
+        <label class="control-label" for="">Phone Number:</label>
+        <form:input path="phoneNo" type="text" class="form-control" placeholder="Enter Phone Number"/>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Register</button>
         </div>    
-        </form>
+        </form:form>
         </div>
         </div>  
         </body>

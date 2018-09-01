@@ -6,6 +6,8 @@ public class User {
 	private String lastName;
 	private String dateOfBirth;
 	private String phoneNo;
+	private String email;
+	private String password;
 	private Address address;
 	
 	public User() {
@@ -16,6 +18,18 @@ public class User {
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getFirstName() {
 		return firstName;

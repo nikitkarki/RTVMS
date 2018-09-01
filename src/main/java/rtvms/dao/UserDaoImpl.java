@@ -1,5 +1,7 @@
 package rtvms.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -42,6 +44,19 @@ public class UserDaoImpl implements UserDao{
 			e.printStackTrace();
 		}
 		return userList;
+	}
+
+	public Boolean registerUser(User user) {
+		String insertSql= "insert into rtvms.user_table" +
+					"(firstName,lastName,dateOfBirth,email,phoneNo,password,address) values (?,?,?,?,?,?,?)";
+		try {
+			jdbcTemplate.update(insertSql, new Object[] { user.getFirstName(), user.getLastName(), user.getDateOfBirth(),
+					user.getEmail(), user.getPhoneNo(), user.getPassword(), 1});
+			return true;
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 }

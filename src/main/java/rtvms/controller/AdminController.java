@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,7 +38,9 @@ public class AdminController {
 	}
 	@RequestMapping(value="/admin/registeruser", method = RequestMethod.GET)
 	public String showRegister(Model model) {
+		User user = new User();
 		model.addAttribute("content", "registeruser.jsp");
+		model.addAttribute("registrationForm", user);
 		return "adminhomepage";
 	}
 	@RequestMapping(value="/admin/lookupuser", method = RequestMethod.POST)
@@ -46,6 +49,13 @@ public class AdminController {
 		List<User> userList = userService.getUser(searchString);
 		model.addAttribute("searchedUser",userList);
 		model.addAttribute("content", "lookupuser.jsp");
+		return "adminhomepage";
+	}
+	@RequestMapping(value="/admin/registeruser", method = RequestMethod.POST)
+	public String doRegister(@ModelAttribute("registrationForm") User user, Model model) {
+		System.out.println("Printing the user to be registered: " + user.toString());
+		Boolean registerUser = userService.registerUser(user);
+		System.out.println("Add user result:" + registerUser);
 		return "adminhomepage";
 	}
 }
