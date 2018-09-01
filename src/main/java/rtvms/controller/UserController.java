@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import rtvms.model.LookUpForm;
 import rtvms.model.UserCredential;
 import rtvms.service.UserService;
 
@@ -32,10 +33,27 @@ public class UserController {
 	public String loginUser(@ModelAttribute("userCredential") UserCredential userCredential, Model model) {
 		int userLogin = userService.loginUser(userCredential);
 		if(userLogin>0) {
+			model.addAttribute("content", "");
 			return "userhome";
 		} else {
 			model.addAttribute("loginMessage","Invalid Username or Password");
 			return "trafficlogin";
 		}
 	}
+	@RequestMapping(value="/user/lookuplicense", method = RequestMethod.GET)
+	public String showLicense(Model model) {
+		LookUpForm myLookUpForm= new LookUpForm();
+		model.addAttribute("content","lookuplicense.jsp");
+		model.addAttribute("myLookUpForm",myLookUpForm);
+		return "userhome";
+	}
+	@RequestMapping(value="/user/lookuplicense", method = RequestMethod.POST)
+	public String license(Model model) {
+		model.addAttribute("lookupmessage","A valid license found");
+		LookUpForm myLookUpForm= new LookUpForm();
+		model.addAttribute("myLookUpForm",myLookUpForm);
+		model.addAttribute("content","lookuplicense.jsp");
+		return "userhome";
+	}
+	
 }

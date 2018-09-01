@@ -31,13 +31,14 @@ background-color:#ffffff;
 <h1>Traffic User Control Panel</h1>
 	<div class="col-xs-12" >
 	<ul class="nav navbar-nav col-xs-12 col-lg-12 col-md-12">
-				<li><a href="#"><i class="fas fa-home"></i>&nbsp Home</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/home"><i class="fas fa-home"></i>&nbsp Home</a></li>
 				 <li class="dropdown">
 			 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ticket-alt"></i>&nbsp Ticket Portal <b class="caret"></b></a>
             	<ul class="dropdown-menu">
-              	<li><a href="#"><i class="fas fa-search"></i>&nbsp Lookup License</a></li>
+              	<li><a href="${pageContext.request.contextPath}/user/lookuplicense"><i class="fas fa-search"></i>&nbsp Lookup License</a></li>
                 <li><a href="#"><i class="fas fa-ticket-alt"></i>&nbsp Issue Ticket</a></li>
                 </ul></li>
+                <li><a href="${pageContext.request.contextPath}/user"><i class="fas fa-sign-out-alt"></i>&nbsp Logout</a></li>
 				</ul>
 	</div>
 	<div class="col-xs-12 content-div">
