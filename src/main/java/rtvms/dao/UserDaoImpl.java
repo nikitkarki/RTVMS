@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import rtvms.model.Address;
 import rtvms.model.User;
+import rtvms.model.UserCredential;
 
 @Repository
 public class UserDaoImpl implements UserDao{
@@ -57,6 +58,19 @@ public class UserDaoImpl implements UserDao{
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	public int loginUser(UserCredential userCredential) {
+		String selectSql = "select count(*) from rtvms.user_table where email = ? and password = ?"; 
+//	+"'"  + userCredential.getUsername() + "'" + "and password=" + "'" +userCredential.getPassword() +"'";
+		System.out.println(selectSql);
+		try {
+			int count = jdbcTemplate.queryForObject(selectSql, new Object[] {userCredential.getUsername(), userCredential.getPassword()}, Integer.class);
+			return count;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import rtvms.dao.UserDao;
 import rtvms.model.User;
+import rtvms.model.UserCredential;
 
 @Service("userService")
 public class UserServiceImpl implements UserService{
@@ -23,6 +24,10 @@ public class UserServiceImpl implements UserService{
 
 	public Boolean registerUser(User user) {
 		return userDao.registerUser(user);
+	}
+
+	public int loginUser(UserCredential userCredential) {
+		return userDao.loginUser(userCredential);
 	}
 	
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -34,19 +35,20 @@
 </head>
 <body>
 <div class="container">
+	<h2 style="color:red;" class="text-center">${loginMessage}</h2>
 <div class="login-form">
-    <form action="${pageContext.request.contextPath}/user/home" method="get">
+    <form:form action="${pageContext.request.contextPath}/user" method="post" modelAttribute="userCredential">
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required">
+        <form:input path="username" type="text" class="form-control" placeholder="Username" required="required"/>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <form:input path="password" type="password" class="form-control" placeholder="Password" required="required"/>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>        
-    </form>
+    </form:form>
 </div>
 </div>
 </body>
