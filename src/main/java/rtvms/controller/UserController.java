@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import rtvms.model.LookUpForm;
+import rtvms.model.TicketForm;
 import rtvms.model.UserCredential;
 import rtvms.service.UserService;
 
@@ -55,5 +56,20 @@ public class UserController {
 		model.addAttribute("content","lookuplicense.jsp");
 		return "userhome";
 	}
-	
+	@RequestMapping(value="/user/issueticket", method = RequestMethod.GET)
+	public String showTicket(Model model) {
+		TicketForm myTicketForm= new TicketForm();
+		model.addAttribute("myTicketForm",myTicketForm);
+		model.addAttribute("content","issueticket.jsp");
+		return "userhome";
+	}
+	@RequestMapping(value="/user/issueticket", method = RequestMethod.POST)
+	public String issueTicket(Model model) {
+		model.addAttribute("lookupmessage","Ticket has been issued");
+		TicketForm myTicketForm= new TicketForm();
+		model.addAttribute("myTicketForm",myTicketForm);
+		model.addAttribute("content","issueticket.jsp");
+		return "userhome";
+	}
+
 }

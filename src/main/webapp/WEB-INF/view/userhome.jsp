@@ -36,7 +36,7 @@ background-color:#ffffff;
 			 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-ticket-alt"></i>&nbsp Ticket Portal <b class="caret"></b></a>
             	<ul class="dropdown-menu">
               	<li><a href="${pageContext.request.contextPath}/user/lookuplicense"><i class="fas fa-search"></i>&nbsp Lookup License</a></li>
-                <li><a href="#"><i class="fas fa-ticket-alt"></i>&nbsp Issue Ticket</a></li>
+                <li><a href="${pageContext.request.contextPath}/user/issueticket"><i class="fas fa-ticket-alt"></i>&nbsp Issue Ticket</a></li>
                 </ul></li>
                 <li><a href="${pageContext.request.contextPath}/user"><i class="fas fa-sign-out-alt"></i>&nbsp Logout</a></li>
 				</ul>
