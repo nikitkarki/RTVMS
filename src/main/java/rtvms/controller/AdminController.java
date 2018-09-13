@@ -67,7 +67,6 @@ public class AdminController {
 	}
 	@RequestMapping(value="/admin/registeruser", method = RequestMethod.POST)
 	public String doRegister(@ModelAttribute("registrationForm") User user, Model model) {
-		System.out.println("Printing the user to be registered: " + user.toString());
 		Boolean registerUser = userService.registerUser(user);
 		System.out.println("Add user result:" + registerUser);
 		return "adminhomepage";

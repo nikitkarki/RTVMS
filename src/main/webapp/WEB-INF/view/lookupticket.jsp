@@ -14,8 +14,8 @@
 <div class="container col-xs-6 col-md-6 col-sm-6">
 <form action="${pageContext.request.contextPath}/tickets/lookupticket" method="POST">
   <div class="form-group">
-    <label for="TicketNumber">Ticket Number</label>
-    <input type="text" class="form-control" name="ticketNumber" placeholder="Enter Ticket Number">
+    <label for="LicenceNumber">Licence Number</label>
+    <input type="text" class="form-control" name="licenceNumber" placeholder="Enter Licence Number">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href="/rtvms/home">Cancel</a>
@@ -25,26 +25,26 @@
 			<thead>
 				<tr>
 					<th scope="col">Ticket ID</th>
-					<th scope="col">Ticket Number</th>
 					<th scope="col">FirstName</th>
 					<th scope="col">LastName</th>
 					<th scope="col">Date Of Birth</th>
 					<th scope="col">Issue Date</th>
 					<th scope="col">License Number</th>
+					<th scope="col">Violation Number</th>
 				</tr>
 			</thead>
 			<tbody>
-			<c:if test="${searchedTicket.ticketId != 0}">
-					<tr>
-						<td>${searchedTicket.ticketId}</td>
-						<td>${searchedTicket.ticketNumber}</td>
-						<td>${searchedTicket.firstName}</td>
-						<td>${searchedTicket.lastName}</td>
-						<td>${searchedTicket.dateOfBirth}</td>
-						<td>${searchedTicket.issueDate}</td>
-						<td>${searchedTicket.licenseNumber}</td>
+			<c:forEach items="${searchedTicket}" var="ticket">
+				<tr>
+						<td>${ticket.ticketId}</td>
+						<td>${ticket.firstName}</td>
+						<td>${ticket.lastName}</td>
+						<td>${ticket.dateOfBirth}</td>
+						<td>${ticket.issueDate}</td>
+						<td>${ticket.licenseNumber}</td>
+						<td>${ticket.violation}</td>
 					</tr>
-			</c:if> 
+			</c:forEach>
 			</tbody>
 		</table>
 		<div class="text-danger">${ticketMessage}</div>

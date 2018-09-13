@@ -1,10 +1,19 @@
 package rtvms.model;
 
+import java.util.List;
+
 public class TicketForm {
 private String firstName;
 private String lastName;
 private String dateOfBirth;
 private String licenseNumber;
+private List<Integer> violationList;
+public List<Integer> getViolationList() {
+	return violationList;
+}
+public void setViolationList(List<Integer> violationList) {
+	this.violationList = violationList;
+}
 public String getFirstName() {
 	return firstName;
 }
@@ -28,5 +37,10 @@ public String getLicenseNumber() {
 }
 public void setLicenseNumber(String licenseNumber) {
 	this.licenseNumber = licenseNumber;
+}
+@Override
+public String toString() {
+	return "TicketForm [firstName=" + firstName + ", lastName=" + lastName + ", dateOfBirth=" + dateOfBirth
+			+ ", licenseNumber=" + licenseNumber + ", violationList=" + violationList + "]";
 }
 }

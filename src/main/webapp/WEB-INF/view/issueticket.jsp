@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,7 +43,7 @@ body{
 </head>
 <body>
 <div class="container">
-        <div class="registration-form">
+        <div class="registration-form col-xs-12">
         <form:form action="${pageContext.request.contextPath}/user/issueticket" method="post" modelAttribute="myTicketForm">
         <h2 class="text-center">Issue Ticket</h2>    
         <div class="form-group col-xs-6 col-md-6 col-sm-6">
@@ -57,12 +58,25 @@ body{
             <label class="control-label" for="">License Number:</label>
             <form:input path="licenseNumber" class="form-control" type="text" placeholder="Enter License number" required="required" />
             </div>
-              <div class="form-group col-xs-6 col-md-6 col-sm-6">
+        <div class="form-group col-xs-6 col-md-6 col-sm-6">
             <label class="control-label" for="">Date of Birth:</label>
             <form:input path="dateOfBirth" class="form-control" type="text" placeholder="Enter Date of Birth" required="required" />
-        </div>   
+        </div>
+         <div class="form-group col-xs-12 col-md-12 col-sm-12"> 
+         	<label class="control-label" for="">Choose Violation:</label>
+         	<br>
+         	<c:forEach items="${violationList}" var="violation">
+         		<tr>
+         			<td>
+         				<input type="checkbox" name="violation" value="${violation.violationId}"/>${violation.violationDescription}
+         			</td>
+         			<br />
+         		</tr>
+         	
+         	</c:forEach>
+         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Search</button>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
 			</div>   
 			<h2 style="color:green;" class="text-center">${lookupmessage}</h2>     
         </form:form>

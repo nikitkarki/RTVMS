@@ -3,13 +3,12 @@ package rtvms.model;
 public class Ticket {
 	
 	private int ticketId;
-	private String ticketNumber;
+	private String licenseNumber;
 	private String firstName;
 	private String lastName;
 	private String dateOfBirth;
 	private String issueDate;
-	private String licenseNumber;
-	private Violations violations;
+	private int violation;
 	
 	public Ticket() {
 		super();
@@ -20,11 +19,11 @@ public class Ticket {
 	public void setTicketId(int ticketId) {
 		this.ticketId = ticketId;
 	}
-	public String getTicketNumber() {
-		return ticketNumber;
+	public String getLicenseNumber() {
+		return licenseNumber;
 	}
-	public void setTicketNumber(String ticketNumber) {
-		this.ticketNumber = ticketNumber;
+	public void setLicenseNumber(String licenseNumber) {
+		this.licenseNumber = licenseNumber;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -50,22 +49,10 @@ public class Ticket {
 	public void setIssueDate(String issueDate) {
 		this.issueDate = issueDate;
 	}
-	public String getLicenseNumber() {
-		return licenseNumber;
+	public int getViolation() {
+		return violation;
 	}
-	public void setLicenseNumber(String licenseNumber) {
-		this.licenseNumber = licenseNumber;
-	}
-	public Violations getViolations() {
-		return violations;
-	}
-	public void setViolations(Violations violations) {
-		this.violations = violations;
-	}
-	@Override
-	public String toString() {
-		return "Ticket [ticketId=" + ticketId + ", ticketNumber=" + ticketNumber + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", dateOfBirth=" + dateOfBirth + ", issueDate=" + issueDate
-				+ ", licenseNumber=" + licenseNumber + ", violation=" + violations + "]";
+	public void setViolation(int violation) {
+		this.violation = violation;
 	}
 }

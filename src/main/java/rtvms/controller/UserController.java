@@ -1,5 +1,13 @@
 package rtvms.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder.In;
+import javax.servlet.http.HttpServletRequest;
+
+import org.hibernate.mapping.Array;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,11 +18,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import rtvms.model.LookUpForm;
 import rtvms.model.TicketForm;
 import rtvms.model.UserCredential;
+import rtvms.model.Violations;
+import rtvms.service.TicketService;
 import rtvms.service.UserService;
 
 @Controller
 public class UserController {
 	private UserService userService;
+	private TicketService ticketService;
+	@Autowired
+	public void setTicketService(TicketService ticketService) {
+		this.ticketService = ticketService;
+	}
 	@Autowired
 	public void setUserService(UserService userService) {
 		this.userService = userService;
@@ -61,13 +76,34 @@ public class UserController {
 		TicketForm myTicketForm= new TicketForm();
 		model.addAttribute("myTicketForm",myTicketForm);
 		model.addAttribute("content","issueticket.jsp");
+		List<Violations> vList = new ArrayList<Violations>();
+		vList = ticketService.getViolationList();
+		for(Violations v: vList) {
+			System.out.println(v.toString());
+		}
+		model.addAttribute("violationList", vList);
+		
 		return "userhome";
 	}
 	@RequestMapping(value="/user/issueticket", method = RequestMethod.POST)
-	public String issueTicket(Model model) {
-		model.addAttribute("lookupmessage","Ticket has been issued");
+	public String issueTicket(Model model, HttpServletRequest request, @ModelAttribute("myTicketForm") TicketForm ticketForm) {
 		TicketForm myTicketForm= new TicketForm();
 		model.addAttribute("myTicketForm",myTicketForm);
+		myTicketForm = ticketForm;
+		String intlist[] = request.getParameterValues("violation");
+		List<Integer> violationList = new ArrayList<Integer>();
+		for(int i=0; i<intlist.length; i++) {
+			violationList.add(Integer.parseInt(intlist[i]));
+		}
+		myTicketForm.setViolationList(violationList);
+		
+		//TODO ticket issue logic here
+		boolean ticketIssued = ticketService.issueTicket(myTicketForm);
+		if(ticketIssued) {
+			model.addAttribute("lookupmessage","Ticket has been issued");
+		} else {
+			model.addAttribute("lookupmessage","There was a problem issuing the ticket, please try again");
+		}
 		model.addAttribute("content","issueticket.jsp");
 		return "userhome";
 	}

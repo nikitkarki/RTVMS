@@ -30,4 +30,10 @@ public class Violations {
 	public void setViolationDescription(String violationDescription) {
 		this.violationDescription = violationDescription;
 	}
+	@Override
+	public String toString() {
+		return "Violations [violationId=" + violationId + ", violation_type=" + violation_type + ", violationCharge="
+				+ violationCharge + ", violationDescription=" + violationDescription + "]";
+	}
+	
 }

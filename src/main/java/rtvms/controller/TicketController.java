@@ -2,6 +2,8 @@ package rtvms.controller;
 
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,11 +37,11 @@ public class TicketController {
 	}
 	@RequestMapping(value="/lookupticket", method = RequestMethod.POST)
 	public String getTicket(Model model, HttpServletRequest request) {
-		String ticketNumber = request.getParameter("ticketNumber");
-		Ticket ticket = ticketService.getTicket(ticketNumber);
-		model.addAttribute("searchedTicket",ticket);
+		String licenceNumber = request.getParameter("licenceNumber");
+		List<Ticket> tickets = ticketService.getTicket(licenceNumber);
+		model.addAttribute("searchedTicket",tickets);
 		model.addAttribute("content", "lookupticket.jsp");
-		if(ticket.getTicketId() == 0) {
+		if(tickets.size() < 1) {
 			model.addAttribute("ticketMessage", "Ticket Not Found");
 		}
 		return "home";
@@ -47,11 +49,11 @@ public class TicketController {
 	
 	@RequestMapping(value="/payticket", method = RequestMethod.POST)
 	public String getTickets(Model model, HttpServletRequest request) {
-		String ticketNumber = request.getParameter("ticketNumber");
-		Ticket ticket = ticketService.getTicket(ticketNumber);
-		model.addAttribute("searchedTicket",ticket);
+		String licenceNumber = request.getParameter("licenseNumber");
+		List<Ticket> tickets = ticketService.getTicket(licenceNumber);
+		model.addAttribute("searchedTicket",tickets);
 		model.addAttribute("content", "payticket.jsp");
-		if(ticket.getTicketId() == 0) {
+		if(tickets.size() < 1) {
 			model.addAttribute("ticketMessage", "Ticket Not Found");
 		}
 		return "home";

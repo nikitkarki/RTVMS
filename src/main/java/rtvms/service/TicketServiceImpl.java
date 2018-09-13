@@ -1,10 +1,13 @@
 package rtvms.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import rtvms.dao.TicketDao;
 import rtvms.model.Ticket;
+import rtvms.model.TicketForm;
+import rtvms.model.Violations;
 
 
 public class TicketServiceImpl implements TicketService{
@@ -16,9 +19,16 @@ public class TicketServiceImpl implements TicketService{
 		this.ticketDao = ticketDao;
 	}
 
-	public Ticket getTicket(String ticketNumber) {
-		Ticket ticket = new Ticket();
-		ticket = ticketDao.getTicket(ticketNumber);
-		return ticket;
+	public List<Ticket> getTicket(String licenceNumber) {
+		return ticketDao.getTicket(licenceNumber);
 	}
+
+	public List<Violations> getViolationList() {
+		return ticketDao.getAllViolation();
+	}
+
+	public boolean issueTicket(TicketForm ticketForm) {
+		return ticketDao.issueTicket(ticketForm);
+	}
+
 }
