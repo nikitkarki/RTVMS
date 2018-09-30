@@ -29,8 +29,9 @@ background-color:#ffffff;
 </head>
 <body>
 <div class="container">
+<div class="text-success">${registerMessage}</div>
 <h1>RTVMS Control Panel</h1>
-	<div class="col-xs-12" >
+			<div class="col-xs-12" >
 	<ul class="nav navbar-nav col-xs-12 col-lg-12 col-md-12">
 					<li><a href="${pageContext.request.contextPath}/admin/home"><i class="fas fa-home"></i>&nbspHome</a></li>
 					 <li class="dropdown">

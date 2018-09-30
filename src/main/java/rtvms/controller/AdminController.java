@@ -69,6 +69,7 @@ public class AdminController {
 	public String doRegister(@ModelAttribute("registrationForm") User user, Model model) {
 		Boolean registerUser = userService.registerUser(user);
 		System.out.println("Add user result:" + registerUser);
+		model.addAttribute("registerMessage", "User Registered");
 		return "adminhomepage";
 	}
 }

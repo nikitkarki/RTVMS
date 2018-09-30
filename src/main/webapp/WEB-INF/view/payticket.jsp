@@ -51,6 +51,113 @@
 		</table>
 		<div class="text-danger">${ticketMessage}</div>
 	</div>
+	<div>
+	<table border=2px>
+	<tr>
+		<th>Violation No.</th>
+		<th>Voilation type</th>
+		<th>Voilation charge</th>
+		<th>Voilation description</th>	
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>Roadsigns</td>
+		<td>500</td>
+		<td>Failure to follow traffic lights</td>
+	</tr>
+		<tr>
+		<td>2</td>
+		<td>Roadsigns</td>
+		<td>500</td>
+		<td>Failure to follow road lane laws</td>
+	</tr>
+		<tr>
+		<td>3</td>
+		<td>Roadsigns</td>
+		<td>500</td>
+		<td>Failure to follow road lane laws</td>
+	</tr>
+		<tr>
+		<td>4</td>
+		<td>Roadsigns</td>
+		<td>500</td>
+		<td>Failure to follow road lane laws</td>
+	</tr>
+		<tr>
+		<td>5</td>
+		<td>Vehicle</td>
+		<td>1000</td>
+		<td>Vehicle Body Illegally Modified</td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>Vehicle</td>
+		<td>1000</td>
+		<td>Passengers more than legally permitted</td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td>Vehicle</td>
+		<td>500</td>
+		<td>Violated Motorcycle Helmet policy</td>
+	</tr><tr>
+		<td>8</td>
+		<td>Vehicle</td>
+		<td>500</td>
+		<td>Vehicle Lights Illegallly Modified/ Not in function</td>
+	</tr><tr>
+		<td>9</td>
+		<td>Vehicle</td>
+		<td>500</td>
+		<td>Vehicle Number Plates not clear</td>
+	</tr><tr>
+		<td>10</td>
+		<td>Vehicle</td>
+		<td>500</td>
+		<td>Vehicle Bluebook not carried</td>
+	</tr><tr>
+		<td>11</td>
+		<td>Vehicle</td>
+		<td>1500</td>
+		<td>Public Vehicle not stopping at bus-stop for passengers</td>
+	</tr><tr>
+		<td>12</td>
+		<td>Vehicle</td>
+		<td>1500</td>
+		<td>Operating Vehicle physically not safe in condition</td>
+	</tr><tr>
+		<td>13</td>
+		<td>Driver</td>
+		<td>1000</td>
+		<td>Operating Vehicle without a License</td>
+	</tr><tr>
+		<td>14</td>
+		<td>Driver</td>
+		<td>1000</td>
+		<td>Operating Vehicle without a valid License</td>
+	</tr><tr>
+		<td>15</td>
+		<td>Driver</td>
+		<td>5000</td>
+		<td>Operating Vehicle under influence of alcohol</td>
+	</tr><tr>
+		<td>16</td>
+		<td>Driver</td>
+		<td>2000</td>
+		<td>Operating Vehicle in a reckless manner</td>
+	</tr><tr>
+		<td>17</td>
+		<td>Driver</td>
+		<td>1000</td>
+		<td>Overspeeding than the posted Speed Limit</td>
+	</tr><tr>
+		<td>18</td>
+		<td>Driver</td>
+		<td>1000</td>
+		<td>Valid Bluebook not in possesion of driver</td>
+	</tr>
+</table>
+	</div>
 </div>
 </body>
 </html>
